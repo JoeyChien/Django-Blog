@@ -11,8 +11,10 @@ class Post(models.Model):
     category = models.ForeignKey(Category, on_delete = models.CASCADE, related_name='post')
     create_time = models.DateTimeField(auto_now_add=True)
 
+@admin.register(Category)
 class CategoryAdmin(admin.ModelAdmin):
-	list_display = ('id', 'name') 
+	list_display = [field.name for field in Category._meta.fields]
 
+@admin.register(Post)
 class PostAdmin(admin.ModelAdmin):
-	list_display = ('id', 'title') 
+	list_display = [field.name for field in Post._meta.fields]
