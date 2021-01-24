@@ -18,3 +18,4 @@ class CategoryAdmin(admin.ModelAdmin):
 @admin.register(Post)
 class PostAdmin(admin.ModelAdmin):
 	list_display = [field.name for field in Post._meta.fields]
+	list_filter = ('create_time',)
