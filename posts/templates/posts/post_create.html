@@ -1,0 +1,15 @@
+{% extends "layout.html" %}
+{% block title %} My Blog {% endblock %}
+{% block content %}
+<div class="col-6 col-md-6">
+  <div class="card" style="width: 18rem;">
+    <div class="card-body">
+      <h5 class="card-title">新增 Post</h5>
+      <form method="POST">
+        {{ form.as_p }}
+        <input type="submit" value="Save">
+      </form>
+    </div>
+  </div>
+</div>
+{% endblock %}
