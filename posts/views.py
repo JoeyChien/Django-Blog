@@ -2,6 +2,7 @@ from django.shortcuts import render
 from django.http import HttpResponse
 from posts.models import Post
 from .forms import PostForm
+from django.shortcuts import get_object_or_404
 
 def index(request):
     posts = Post.objects.all()
@@ -11,7 +12,7 @@ def index(request):
     return render(request, 'index.html', content)
 
 def singlePost(request, id):
-    post = Post.objects.get(id=id)
+    post = get_object_or_404(Post, id=id)
     context = {
         'post': post
     }
