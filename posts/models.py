@@ -19,7 +19,7 @@ class Post(models.Model):
         return self.title
     
     def get_absolute_url(self):
-        return reverse("post_id", kwargs={"id": self.id})
+        return reverse("posts:post_id", kwargs={"id": self.id})
 
 @admin.register(Category)
 class CategoryAdmin(admin.ModelAdmin):
