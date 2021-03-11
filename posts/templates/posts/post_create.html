@@ -6,6 +6,7 @@
     <div class="card-body">
       <h5 class="card-title">新增 Post</h5>
       <form method="POST">
+        {% csrf_token %}
         {{ form.as_p }}
         <input type="submit" value="Save">
       </form>
